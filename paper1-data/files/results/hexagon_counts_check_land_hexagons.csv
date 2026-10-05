@@ -1,0 +1,7 @@
+layer,field,description,hexagons,identical_share,within_1_cell_or_1m_share,correlation,total_stored,total_recomputed
+land_hexagons,GN_count,GI cells (MSPA input raster),20413,0.5321,0.5537,0.998287,7254788.0,7321943.0
+land_hexagons,frag_gi_c,"branch and islet cells (MSPA 1, 9, 101, 109)",20413,0.9128,0.9558,0.999752,425132.5,430280.0
+land_hexagons,for_count,tree cover loss cells,20413,0.9976,1.0,0.999999,290189.0,290143.0
+land_hexagons,imperv_cou,imperviousness increase cells,20413,1.0,1.0,0.999974,896.0,895.0
+land_hexagons,ab_count,abandoned semi-natural grassland cells,20413,0.9983,0.9997,1.0,412402.0,412360.0
+land_hexagons,road_lengh,road length in GI (m),20413,1.0,1.0,1.0,2070412.0,2070369.8

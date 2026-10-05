@@ -1,0 +1,101 @@
+path,bytes,sha256,kind
+.zenodo.json,1985,e7196a8390cecfc98e4404a90780446b58633d2dd82e4e05ba9b1f96793bec7d,repository metadata
+CHANGELOG.md,878,cf7dfb04fd2a5195dfa7126ed077c2bc5f027e83e5dc6e88e82f90db0286b34b,documentation (Markdown)
+CITATION.cff,1293,5689d159ffe9584cfc801c768c6de90119b4c8cece819b034d7bc91da687b25e,citation metadata
+LICENSE.md,3622,f155370651652dd130d1e4ae9ccff70042f0a73ae8cbdce46406b05f72ac8da7,documentation (Markdown)
+README.md,7515,dd3fab4839380db71e24279f477cd1e1159b8992d9f67c10cae073469097feb0,documentation (Markdown)
+code/README.md,3848,f978b96668a42f129d0454abbbf8e92de07986ed7ff4ec0386492d0a6ac7c7d3,documentation (Markdown)
+code/build/build_from_raw.py,27874,ecd0162b4434c5fef06decc886b5d86315f85e64179508efd465f2cc01749e5d,code (Python)
+code/build/make_manifest.py,1809,660d5ca5dc8bccaa7b25721f91ed5bdb542f33259642af12698e523072b08879,code (Python)
+code/original/analysis_R/1.R,1689,5ad0351bb3ea29be7fe5a13fd8dbaff919b7401f22d058bc4e3c3e6a8fa2a535,code (R)
+code/original/analysis_R/Annova.R,1385,a83acf054c548574c5f3d6674c8cac8af692823b1cfca7b5c7d6bf82706699e9,code (R)
+code/original/analysis_R/Annova_ls_patch_metrics.R,8979,9b2b8f7c572b2d803d1ba9e807e1a1a4327e7957a649169907714dea0b4dc539,code (R)
+code/original/analysis_R/BGI_content.R,11219,263c8d1a994f2298b34dc2fd8ccc68e9d89fca4862196fac8a835b30ab952eb8,code (R)
+code/original/analysis_R/Hotspot_Cum_impact.R,14227,6d7f86bdcf2d9721a52b47fb37d43ea6286856071aabb63e77c7239cc284bc8e,code (R)
+code/original/analysis_R/Impacts_Kruskal-Wallis.R,34965,63aa1f97a3d2be2e07c440f758700961268352763d46a511575dd296984eedb3,code (R)
+code/original/analysis_R/LM_Plots.R,2423,71d44281e60e9315b7d22803bed6bb64a8fd5d9c10027cc27183783c2810b2ba,code (R)
+code/original/analysis_R/LS_Metrics_results.R,7924,ed5898167092cf5d38671ffd321317c338281ad6e000e6da18450a28a7337307,code (R)
+code/original/analysis_R/LS_patch_branches.R,9020,8d1dc85d9578a50930a561096f19c7688d38b3a40f525eca2e7703058b3ff2c6,code (R)
+code/original/analysis_R/LS_patch_corridors.R,9269,71a35119b86f40ca0823f5eace2999fa0861c35bc3ca692c937b58d6bdb2bf11,code (R)
+code/original/analysis_R/LS_patch_islets.R,8332,edb971631d799ad616fee4388146f920e2cd4e6847433f78e83115b750ec1fe3,code (R)
+code/original/analysis_R/Paper1_graphs.R,12274,7466601c4e868ddb209aae6c7b5dc13c3a57c8ec8ff5c4ec1c60fade009959d3,code (R)
+code/original/analysis_R/R_plots_impacts_tuckey.R,2450,bf44b091054221204a7adefd0a09e2f577445238c5ee9e1bc6ac27097c2dc6f2,code (R)
+code/original/analysis_R/GN_hexagon_stat/Annova_Tuckey_Impacts_plots.R,3593,aa81ccfbc327bbd50b2f1e9bdffd86baf4d290fe1dd494aee8f9ee579d33c104,code (R)
+code/original/analysis_R/GN_hexagon_stat/BGI_fragmentation_plotting.R,5288,8a689d4c3e36a06b2cb6bcf3fbde93bbf7b4c00dd44ad692a1b6bbcbcbf71783,code (R)
+code/original/analysis_R/GN_hexagon_stat/Combined_plots_impacts.R,27539,ce6871b70630cae546004feb033821a420246ce12802b856081008bbc20535fa,code (R)
+code/original/analysis_R/GN_hexagon_stat/Cummulative_plotting.R,7687,0e8cc205efd3a8e15a6595caa34908fc7cb758ebbf29561af6611dc595938085,code (R)
+code/original/analysis_R/GN_hexagon_stat/Hotspotanalysis_impacts.R,5650,f249cf42886962aff3d8194f81ad1bda8d6700c08e174e2eebfcb5af463a97bc,code (R)
+code/original/analysis_R/GN_hexagon_stat/Impacts_Annova.R,16130,6df6a97087683063b8e59b32a45485673b5a79e01d7b9705fa49187ae8d2d541,code (R)
+code/original/analysis_R/GN_hexagon_stat/Roads.R,3486,e6cd85d0a62c0658fad610de147e193acc69f7135c09b4b8fef4d5d9d084e139,code (R)
+code/original/analysis_R/GN_hexagon_stat/Roads_plotting.R,5175,c99496e28a63356bdbec806b8765c0e7b13c7dd8d69651e44ae13c4efa231436,code (R)
+code/original/analysis_R/GN_hexagon_stat/Table_impacts_sum.R,4283,7016de32a499bbd6f454b46eb93195917ecac21a1e35e8ffcb44047bf1e97af2,code (R)
+code/original/analysis_R/GN_hexagon_stat/abandoned_land_plotting.R,5443,4edf7b6c207535ae4942505e69e85b412ea50b5004c1b46beca7d870f7f53ffe,code (R)
+code/original/analysis_R/GN_hexagon_stat/forest_loss_plotting.R,3457,a2530a547531715f7d7a91e42f4c466e842e26ddf0b1d3ed487876bdfa702bac,code (R)
+code/original/analysis_R/GN_hexagon_stat/imperviousness_plotting.R,5131,b321af7c90fcd4b4398d432ba22ab5944feb83d0728ff19f0aacad8116e76ae7,code (R)
+code/original/analysis_R/bgi_content/BGI_classes_cores.R,11477,b87440a2d174f26a06b369feb658ecf186f6bf466630f38c9eb5c7a2f4b9d818,code (R)
+code/original/analysis_R/bgi_content/GIMainHAbitats.R,4507,7ba3f0b97408541257f5e8df27e45af5f26bd372877ae81597a9d00b2e62f054,code (R)
+code/original/analysis_R/bgi_content/GI_Naturacontent_graph.R,16122,aba0970435d86857e57d071879624207c8245b1a99f37b7d0c5b88853d39c9da,code (R)
+code/original/analysis_R/bgi_content/GI_classes_scheme.R,6188,ec46ab1b09bb4f729b75da81c9d7e2b4ac89274c2fcd6887764319284cc5d4d6,code (R)
+code/original/analysis_R/bgi_content/GIbycounties.R,2907,6f87e5038e832d4a5c05edcbc35dde42c1cc02056a5156fa52ffd1ba256626d0,code (R)
+code/original/analysis_R/bgi_content/Natura2000_branches.R,10979,d0ef2e7556dca1f7a1f649fbb8c7eb5de321fbdbdbb2a79fb9ddd2a28567e275,code (R)
+code/original/analysis_R/bgi_content/Natura2000_corridors.R,10157,e067b4e2953002fb40dc18644c9d62154bc76d4d8402450587f5d72cf817938d,code (R)
+code/original/analysis_R/bgi_content/Natura_branches_habitats.R,5595,7d1e6754f85d4214cf5e5a1c1d8ce09966f691fe5b510956533d302cb5059b06,code (R)
+code/original/analysis_R/bgi_content/Natura_cores_habitats.R,5470,b2581974892922332fb91f5305c4f5ecc17abb2086551e851e19a707e1bc7e45,code (R)
+code/original/analysis_R/bgi_content/Natura_corridors_habitats.R,5484,d5b2b701fd720074117c4ff153b5cf541259002de0d07c03e1f1e55f4256c108,code (R)
+code/original/bgi_statistics/LSM.R,5336,5ff5428f43fc256a95c192118c9587b65fa53ba21ca5b608c97f20b5d6ce2478,code (R)
+code/original/bgi_statistics/bgi_area_sums.py,645,7401251c6f19633afc2bc3fa87bb599b8230be845f52fd0e2bc7c7e4128b80b5,code (Python)
+code/original/bgi_statistics/landscape_statistics.py,3882,7ea87c3a49b4215bec309fcbb2e1de6d6caa9288ce846ff496e22a80af6a7079,code (Python)
+code/original/bgi_statistics/landscape_statistics_plots.py,1719,f3155bad818f1fdb6c6504e5f207333d71ea904ed6bc6d173e7cfa30da672f11,code (Python)
+code/original/bgi_statistics/rearrange_tables.py,1379,95eaed5fab9ae016fe01ffbca9b88227f86dce913bf70fe8e946c32d9e99335c,code (Python)
+code/original/bgi_statistics/rearrange_tables.r,610,655506be9a06b7c0110aabc5bdfc85e7bb00ef13c45d213140be648d0be88d98,code (R)
+code/original/qgis/normalise_in_qgis.py,715,85528eba0def5de28153e4ef2aa4bbaf7b241ff6531e62f6977640df1b9d0fbf,code (Python)
+code/reproduce/common.py,7975,9bb67572754081698cc9d372d0e8087a3ad3da4892249eef019597f13f654b76,code (Python)
+code/reproduce/r1_gi_and_mspa.py,6214,e193a8868a882d85cfa84f5e06a07de67e8ff762233c1457fdb8b878d6730366,code (Python)
+code/reproduce/r2_hexagon_indicators.py,3134,5e476442e900db77d2012a8154492d9d14e40d56fdf5fedb24e0a6be94f1472a,code (Python)
+code/reproduce/r3_statistics.py,7566,3835dacc4622479a576e38fe85c1a2beeb4747780210fd4a795568ad0737a8d9,code (Python)
+code/reproduce/r4_reconcile.py,10317,fbfcead0893fe73301e828ba0e58efc8c9e9b3b4d9b76021208fd8e6a9cc33c8,code (Python)
+data/01_coastal_zone/coastal_zone_3km.gpkg,30113792,e3cbb4cc0f8c20648d1702e3e6af37d0c3a4421c9ae70755be6a853715dabbc6,vector (GeoPackage)
+data/02_green_infrastructure/gi_binary_20m.tif,2535298,935a4b637ac7406a641fd96a567bd928d67db41db45b7e7ae235bdff747a437e,raster (Cloud Optimized GeoTIFF)
+data/02_green_infrastructure/gi_class_20m.tif,1875836,f67be55462b8e08463baad3624aebe3affeec0092eb560efc7deb9ff4ca0101c,raster (Cloud Optimized GeoTIFF)
+data/03_mspa/mspa_coastal_3km_20m.tif,1878115,c2bf593aa5204fcbce33fb000a69bdc55982465a39ababd0118b62bb7d10754f,raster (Cloud Optimized GeoTIFF)
+data/05_pressures/forest_loss_2012_2018_20m.tif,1662338,f61e056c670c7c6806f062cbc6e10cb073168d3a002d6c62c8a33f26d05cdaab,raster (Cloud Optimized GeoTIFF)
+data/05_pressures/imperviousness_increase_2006_2018_20m.tif,778104,875c5e32fb63f0b2e314c4de1a6114dcf562fc3ce72a91b89c51d0cb1c2c263e,raster (Cloud Optimized GeoTIFF)
+data/05_pressures/roads_in_gi.gpkg,3166208,1129cdf028683b0ba2094d92b0cc64dddf3fd2f21149af8e3df72d39a27f08c7,vector (GeoPackage)
+data/06_hexagons/hexagons_impacts.gpkg,23511040,b2e390311a28e5067a9102fb10ea039f247344461b8a71e4594b16ffed5b4ca7,vector (GeoPackage)
+docs/article_values.csv,12597,d6d756b395ef3a328085aedabbc5158cb1fc2327105013a44df5a8362814926e,"table (CSV, UTF-8)"
+docs/data_dictionary.csv,14782,5eeb1540b40950b6c4c3854d8e98b124c16f17a5346ee3ce357b2f3c57bc2404,"table (CSV, UTF-8)"
+docs/methods_parameters.md,8957,85a13ef314fb29b3fa4ec6e1d1b257edb04fd75cc7c039fb619dcbd466759f35,documentation (Markdown)
+docs/mspa_codes.csv,1098,bbb0bb85f044a924f47096aca7c1a475a477230d204631b0cebdc864e3ba33c7,"table (CSV, UTF-8)"
+docs/provenance_and_licences.csv,4192,40246f052b820438804de9c42967a0a5569f4c1867e19e360cc2a4c6be165b5e,"table (CSV, UTF-8)"
+docs/reconciliation_with_article.csv,34404,28cf7515173f41e4313db0d98dc2920e6c8772d766735264beb40db58dfbefa3,"table (CSV, UTF-8)"
+docs/reconciliation_with_article.md,8123,663af751b91546d5102427b142a6ba15baac71f8e6340e41d0bf46b2a8889281,documentation (Markdown)
+results/core_metrics_by_region.csv,528,8a2433b956124afe0e9c03858111d3a34b47c675ad16dd068571d3627f4c617f,"table (CSV, UTF-8)"
+results/dunn_pairwise.csv,12636,76635a89a87bcbff45f91ffc5d9530dc9403ef32ec5e72c98eb79c4b0b6cf7c7,"table (CSV, UTF-8)"
+results/gi_binary_vs_mspa.csv,90,b5d8a0a1d5f8fe7c6ac92e878d6b4f21f1495d8c0850df5eb72729542d488110,"table (CSV, UTF-8)"
+results/gi_element_by_class.csv,5432,b2c3e3cad59e5a156338427f33e557abc7803002d57eede234110fec8a310ff9,"table (CSV, UTF-8)"
+results/gi_share_by_region.csv,943,a6b47fde0da42c32e0439adc8e6e73bb51019af2366d7c44c76b6427ba99083c,"table (CSV, UTF-8)"
+results/global_g.csv,141,09f5fbcc790015b8ac21f211c80e3a19690715a7b3c0863030aec0ea6c5e67b3,"table (CSV, UTF-8)"
+results/hexagon_counts_check_gi_hexagons.csv,695,062343b30b65561bfd44b91307d505f965f602a3f0071e46acec55ce847f7352,"table (CSV, UTF-8)"
+results/hexagon_counts_check_land_hexagons.csv,705,e9fe16fbb9d90c14172353d0a68302af18375e6fed9ae500f5124704cf435705,"table (CSV, UTF-8)"
+results/hexagon_counts_recomputed_gi_hexagons.csv,1111172,1f90f27d98b3a94f7e61dcaf0a384eb5e298783c5bea761d6a641b332ea1ec54,"table (CSV, UTF-8)"
+results/hexagon_counts_recomputed_land_hexagons.csv,1146160,decb1a215b5806affa8bdf9d35fb74bcc883fe7dc0fa5d0a222e909a5b044d40,"table (CSV, UTF-8)"
+results/hotspot_check.csv,168,0edd43fbe393f850d9cf56a8008ede956d2dfa02ee451bb479549caadfb326d4,"table (CSV, UTF-8)"
+results/hotspot_classes_by_region.csv,1439,07dcfaeb969afa6c851ca36b1d4edb422a9034f7c234723623af64a398e06ec7,"table (CSV, UTF-8)"
+results/indicator_derivation_check.csv,1597,44c52b09367fbad261d87aed1001e698c394a3352bb427357c92dfe611e508b8,"table (CSV, UTF-8)"
+results/kruskal_wallis.csv,456,14130a02b79172ee7b2666d083edc6a56b83f93d2b410b958601c69336251c25,"table (CSV, UTF-8)"
+results/mspa_class_area_by_region.csv,5080,38604ad8327571f9754ac19f9a7fd6d8e743557eaf5ad6e56759515abf3175ae,"table (CSV, UTF-8)"
+results/pressures_by_region.csv,891,9a6cdd75b3a6f2c912424b6ad96a8340e7cfe5502f953eafce8f52f05c5c9c72,"table (CSV, UTF-8)"
+tables/annex1_habitats_by_element_region.csv,53426,9c45fd9329ccaab4f5e6cefa4dfb1a090ae272fdc98097331d1ab65dbf40035f,"table (CSV, UTF-8)"
+tables/gi_class_share_by_county_author.csv,725,0c7a01e64aa106790daab21a1d0351a9401aa30ba48d6c92b23c4ea6cabcde39,"table (CSV, UTF-8)"
+tables/gi_elements_area_by_region_class.csv,1911,182e1a8445f0ff5d4f71c2345ed9a548d0595cdcc5fc5250bbb79e7a8672dfe0,"table (CSV, UTF-8)"
+tables/gi_polygons_area_by_class_habitat.csv,10762,3a7ff4c9df63be18c0f24eda75e9cac7b5cf1fb58404d75513edb5a0214e73c7,"table (CSV, UTF-8)"
+tables/table3_habitat_types_author.csv,1442,33c7bb4cb84ba5099b07c7f440916234834a6ad9f2e7dd145140af974229273d,"table (CSV, UTF-8)"
+tables/table4_landscape_metrics_by_county.csv,1018,47d9296d39c3d541c69c48a00afb112cf660a2b16c90e32ca0c218b56ec6bef0,"table (CSV, UTF-8)"
+tables/hexagons/gi_hexagons.csv,4276824,5da1ee1ee645fe5e6e821afa30dca234f35fc96694591f8917fbc25c2b5bbe1a,"table (CSV, UTF-8)"
+tables/hexagons/hotspots.csv,3560109,3bf064f99de281474e4ed5ed8fc709ebbf8b8a0f7d45c3caa74f5a11569a8fed,"table (CSV, UTF-8)"
+tables/hexagons/land_hexagons.csv,4119673,0d3b7bb91fb29ba7a13398b81e376250c63fe204dae6ed6c45d1642e0621ad7e,"table (CSV, UTF-8)"
+tables/landscape_metrics/core_metrics_by_county_table4.csv,620,c1f62ec6bb91e444aec38b37670dc28c01886285a247b470ea445148a1cc6175,"table (CSV, UTF-8)"
+tables/landscape_metrics/landscape_level_metrics.csv,95944,61b8183d004e9bf0ed7791425de29af5a06b9592d1348f9f3fdafce10ee4a331,"table (CSV, UTF-8)"
+tables/landscape_metrics/patch_metrics_cores.csv,137715,a23fd85f6b4ae5835c206cd34402d6866f71ec879d4ba50466546a8bf4c3e9cc,"table (CSV, UTF-8)"
+tables/landscape_metrics/patch_metrics_islets.csv,1463179,aa036669c53cea9af89ae0265646c76d7ab3561f8ad4d019538c71fc21c80f98,"table (CSV, UTF-8)"
+tables/landscape_metrics/patch_metrics_mspa_classes.csv,7438785,50cf84a30575eae72e1121091f7f39c2a6f060b0bee37fcb4a6be7a98a7a4fa4,"table (CSV, UTF-8)"

@@ -1,0 +1,35 @@
+{
+  "upload_type": "dataset",
+  "title": "Green Infrastructure, MSPA elements and pressures in the 3 km coastal zone of Estonia: data and code for Kaskevich et al. (2024)",
+  "version": "1.0",
+  "publication_date": "2026-10-05",
+  "creators": [
+    {
+      "name": "Kaskevich, Volha",
+      "affiliation": "Estonian University of Life Sciences"
+    }
+  ],
+  "description": "<p>Layers, tables, code and documentation behind the figures and tables of Kaskevich, V., Villoslada, M., Ward, R.D., Sepp, K. (2024), Analyzing the structural elements, ecological characteristics, and impact assessment of local green infrastructure in the coastal zone of Estonia, Ecological Indicators 169, 112824.</p><p>Contents: the 3 km coastal zone and its regions; the Green Infrastructure raster used as MSPA input and a GI class raster; the MSPA classification (GuidosToolbox 2.5, 20 m); tree cover loss 2012-2018 and imperviousness increase 2006-2018 rasters derived from the Copernicus Land Monitoring Service; roads crossing GI; 500 m hexagon layers with five pressure indicators, the cumulative impact and Getis-Ord hot-spot classes; landscape metrics at patch and landscape level; the original R and Python scripts; scripts that recompute the results from the released files; and a comparison of 165 published values with the data.</p><p>Coordinate systems: EPSG:3301 (L-EST97) and EPSG:3035 for the Copernicus-derived rasters. Formats: Cloud Optimized GeoTIFF, GeoPackage, CSV.</p>",
+  "access_right": "open",
+  "license": "cc-by-sa-4.0",
+  "keywords": [
+    "green infrastructure",
+    "morphological spatial pattern analysis",
+    "MSPA",
+    "coastal zone",
+    "Estonia",
+    "landscape metrics",
+    "cumulative impact",
+    "hot-spot analysis",
+    "Baltic Sea"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1016/j.ecolind.2024.112824",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ],
+  "language": "eng"
+}

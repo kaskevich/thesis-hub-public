@@ -1,0 +1,129 @@
+region,element,gi_class,area_ha
+Whole coastal zone,background,not in GI polygons,98662.96
+Whole coastal zone,background,permanent grassland,29643.16
+Whole coastal zone,background,Natura 2000 habitat,0.48
+Whole coastal zone,cores,forest,81757.84
+Whole coastal zone,cores,Natura 2000 habitat,68300.28
+Whole coastal zone,corridors,forest,71225.4
+Whole coastal zone,corridors,Natura 2000 habitat,40091.12
+Whole coastal zone,branches,forest,3138.48
+Whole coastal zone,branches,Natura 2000 habitat,3584.52
+Whole coastal zone,islets,forest,8956.32
+Whole coastal zone,islets,Natura 2000 habitat,4528.24
+Whole coastal zone,other foreground,forest,3282.56
+Whole coastal zone,other foreground,Natura 2000 habitat,2342.88
+Harju,background,not in GI polygons,23181.64
+Harju,background,permanent grassland,1901.0
+Harju,background,Natura 2000 habitat,0.08
+Harju,cores,forest,15244.68
+Harju,cores,Natura 2000 habitat,8557.52
+Harju,corridors,forest,11698.6
+Harju,corridors,Natura 2000 habitat,5471.16
+Harju,branches,forest,653.88
+Harju,branches,Natura 2000 habitat,267.44
+Harju,islets,forest,2475.56
+Harju,islets,Natura 2000 habitat,939.48
+Harju,other foreground,forest,534.04
+Harju,other foreground,Natura 2000 habitat,452.6
+Hiiu,background,not in GI polygons,8238.2
+Hiiu,background,permanent grassland,4081.2
+Hiiu,background,Natura 2000 habitat,0.12
+Hiiu,cores,forest,15099.12
+Hiiu,cores,Natura 2000 habitat,9725.24
+Hiiu,corridors,forest,9867.68
+Hiiu,corridors,Natura 2000 habitat,4864.92
+Hiiu,branches,forest,377.12
+Hiiu,branches,Natura 2000 habitat,381.72
+Hiiu,islets,forest,422.88
+Hiiu,islets,Natura 2000 habitat,605.6
+Hiiu,other foreground,forest,776.84
+Hiiu,other foreground,Natura 2000 habitat,497.56
+Ida-Viru,background,not in GI polygons,11309.2
+Ida-Viru,background,permanent grassland,1359.28
+Ida-Viru,cores,forest,2193.08
+Ida-Viru,cores,Natura 2000 habitat,417.04
+Ida-Viru,corridors,forest,2562.24
+Ida-Viru,corridors,Natura 2000 habitat,558.36
+Ida-Viru,branches,forest,199.44
+Ida-Viru,branches,Natura 2000 habitat,12.2
+Ida-Viru,islets,forest,1563.08
+Ida-Viru,islets,Natura 2000 habitat,284.64
+Ida-Viru,other foreground,forest,130.84
+Ida-Viru,other foreground,Natura 2000 habitat,11.4
+Lääne,background,not in GI polygons,9181.92
+Lääne,background,permanent grassland,3010.48
+Lääne,background,Natura 2000 habitat,0.2
+Lääne,cores,forest,9173.56
+Lääne,cores,Natura 2000 habitat,10012.0
+Lääne,corridors,forest,9574.0
+Lääne,corridors,Natura 2000 habitat,4517.84
+Lääne,branches,forest,287.12
+Lääne,branches,Natura 2000 habitat,672.56
+Lääne,islets,forest,430.12
+Lääne,islets,Natura 2000 habitat,449.88
+Lääne,other foreground,forest,317.6
+Lääne,other foreground,Natura 2000 habitat,162.76
+Lääne-Viru,background,not in GI polygons,5044.16
+Lääne-Viru,background,permanent grassland,887.76
+Lääne-Viru,cores,forest,6915.8
+Lääne-Viru,cores,Natura 2000 habitat,5652.12
+Lääne-Viru,corridors,forest,3728.92
+Lääne-Viru,corridors,Natura 2000 habitat,2101.88
+Lääne-Viru,branches,forest,126.52
+Lääne-Viru,branches,Natura 2000 habitat,59.0
+Lääne-Viru,islets,forest,311.96
+Lääne-Viru,islets,Natura 2000 habitat,124.8
+Lääne-Viru,other foreground,forest,333.84
+Lääne-Viru,other foreground,Natura 2000 habitat,227.04
+Pärnu,background,not in GI polygons,19972.32
+Pärnu,background,permanent grassland,5700.36
+Pärnu,background,Natura 2000 habitat,0.08
+Pärnu,cores,forest,8434.0
+Pärnu,cores,Natura 2000 habitat,10720.6
+Pärnu,corridors,forest,8697.96
+Pärnu,corridors,Natura 2000 habitat,6559.32
+Pärnu,branches,forest,566.96
+Pärnu,branches,Natura 2000 habitat,641.48
+Pärnu,islets,forest,2333.12
+Pärnu,islets,Natura 2000 habitat,1033.12
+Pärnu,other foreground,forest,666.72
+Pärnu,other foreground,Natura 2000 habitat,441.6
+Saare,background,not in GI polygons,21735.52
+Saare,background,permanent grassland,12703.08
+Saare,cores,forest,24697.6
+Saare,cores,Natura 2000 habitat,23215.76
+Saare,corridors,forest,25096.0
+Saare,corridors,Natura 2000 habitat,16017.64
+Saare,branches,forest,927.44
+Saare,branches,Natura 2000 habitat,1550.12
+Saare,islets,forest,1419.6
+Saare,islets,Natura 2000 habitat,1090.72
+Saare,other foreground,forest,522.68
+Saare,other foreground,Natura 2000 habitat,549.92
+Tallinn area,background,not in GI polygons,11600.8
+Tallinn area,background,permanent grassland,588.6
+Tallinn area,background,Natura 2000 habitat,0.6
+Tallinn area,cores,forest,2088.56
+Tallinn area,cores,Natura 2000 habitat,573.16
+Tallinn area,corridors,forest,1879.28
+Tallinn area,corridors,Natura 2000 habitat,737.88
+Tallinn area,branches,forest,161.52
+Tallinn area,branches,Natura 2000 habitat,29.44
+Tallinn area,islets,forest,1196.52
+Tallinn area,islets,Natura 2000 habitat,282.56
+Tallinn area,other foreground,forest,247.84
+Tallinn area,other foreground,Natura 2000 habitat,11.28
+Whole raster,background,not in GI polygons,8275331.64
+Whole raster,background,forest,0.2
+Whole raster,background,permanent grassland,29690.64
+Whole raster,background,Natura 2000 habitat,2883.16
+Whole raster,cores,forest,81757.84
+Whole raster,cores,Natura 2000 habitat,68300.28
+Whole raster,corridors,forest,71225.4
+Whole raster,corridors,Natura 2000 habitat,40091.12
+Whole raster,branches,forest,3138.48
+Whole raster,branches,Natura 2000 habitat,3584.52
+Whole raster,islets,forest,8956.32
+Whole raster,islets,Natura 2000 habitat,4528.24
+Whole raster,other foreground,forest,3282.56
+Whole raster,other foreground,Natura 2000 habitat,2342.88

@@ -1,0 +1,154 @@
+region,mspa_code,element,area_ha
+Whole coastal zone,0,background,75841.24
+Whole coastal zone,1,branches,6719.88
+Whole coastal zone,3,cores,14593.64
+Whole coastal zone,9,islets,13483.12
+Whole coastal zone,17,cores,53332.96
+Whole coastal zone,33,corridors,111316.52
+Whole coastal zone,35,cores,78335.64
+Whole coastal zone,65,other foreground,2886.84
+Whole coastal zone,67,cores,3795.88
+Whole coastal zone,100,background (core-opening),91.08
+Whole coastal zone,101,branches,3.12
+Whole coastal zone,105,other foreground,1201.2
+Whole coastal zone,109,islets,1.44
+Whole coastal zone,133,other foreground,13.28
+Whole coastal zone,137,other foreground,136.0
+Whole coastal zone,165,other foreground,86.32
+Whole coastal zone,169,other foreground,1301.8
+Whole coastal zone,220,background (border-opening),52374.28
+Harju,0,background,20367.36
+Harju,1,branches,921.16
+Harju,3,cores,2054.56
+Harju,9,islets,3415.04
+Harju,17,cores,8276.08
+Harju,33,corridors,17169.76
+Harju,35,cores,12728.16
+Harju,65,other foreground,405.4
+Harju,67,cores,743.4
+Harju,100,background (core-opening),8.0
+Harju,101,branches,0.16
+Harju,105,other foreground,218.0
+Harju,165,other foreground,8.64
+Harju,169,other foreground,354.6
+Harju,220,background (border-opening),4707.36
+Hiiu,0,background,3498.8
+Hiiu,1,branches,758.8
+Hiiu,3,cores,2438.4
+Hiiu,9,islets,1028.48
+Hiiu,17,cores,10682.44
+Hiiu,33,corridors,14732.6
+Hiiu,35,cores,11163.04
+Hiiu,65,other foreground,415.96
+Hiiu,67,cores,540.48
+Hiiu,100,background (core-opening),15.28
+Hiiu,101,branches,0.04
+Hiiu,105,other foreground,351.2
+Hiiu,133,other foreground,13.28
+Hiiu,137,other foreground,136.0
+Hiiu,165,other foreground,14.12
+Hiiu,169,other foreground,343.84
+Hiiu,220,background (border-opening),8805.44
+Ida-Viru,0,background,11843.0
+Ida-Viru,1,branches,211.64
+Ida-Viru,3,cores,354.56
+Ida-Viru,9,islets,1847.72
+Ida-Viru,17,cores,672.6
+Ida-Viru,33,corridors,3120.6
+Ida-Viru,35,cores,1448.56
+Ida-Viru,65,other foreground,142.24
+Ida-Viru,67,cores,134.4
+Ida-Viru,220,background (border-opening),825.48
+Lääne,0,background,4064.2
+Lääne,1,branches,959.4
+Lääne,3,cores,2023.12
+Lääne,9,islets,880.0
+Lääne,17,cores,6411.12
+Lääne,33,corridors,14091.84
+Lääne,35,cores,10174.92
+Lääne,65,other foreground,154.32
+Lääne,67,cores,576.4
+Lääne,100,background (core-opening),6.2
+Lääne,101,branches,0.28
+Lääne,105,other foreground,156.12
+Lääne,165,other foreground,3.96
+Lääne,169,other foreground,165.96
+Lääne,220,background (border-opening),8122.2
+Lääne-Viru,0,background,4523.76
+Lääne-Viru,1,branches,184.56
+Lääne-Viru,3,cores,718.28
+Lääne-Viru,9,islets,436.64
+Lääne-Viru,17,cores,5829.2
+Lääne-Viru,33,corridors,5830.8
+Lääne-Viru,35,cores,5835.52
+Lääne-Viru,65,other foreground,64.88
+Lääne-Viru,67,cores,184.92
+Lääne-Viru,100,background (core-opening),38.68
+Lääne-Viru,101,branches,0.96
+Lääne-Viru,105,other foreground,206.16
+Lääne-Viru,109,islets,0.12
+Lääne-Viru,165,other foreground,51.52
+Lääne-Viru,169,other foreground,238.32
+Lääne-Viru,220,background (border-opening),1369.48
+Pärnu,0,background,18520.88
+Pärnu,1,branches,1206.92
+Pärnu,3,cores,2626.96
+Pärnu,9,islets,3364.92
+Pärnu,17,cores,6701.72
+Pärnu,33,corridors,15257.28
+Pärnu,35,cores,9092.16
+Pärnu,65,other foreground,916.88
+Pärnu,67,cores,733.76
+Pärnu,100,background (core-opening),15.8
+Pärnu,101,branches,1.52
+Pärnu,105,other foreground,102.16
+Pärnu,109,islets,1.32
+Pärnu,165,other foreground,4.08
+Pärnu,169,other foreground,85.2
+Pärnu,220,background (border-opening),7136.08
+Saare,0,background,13023.24
+Saare,1,branches,2477.4
+Saare,3,cores,4377.76
+Saare,9,islets,2510.32
+Saare,17,cores,14759.8
+Saare,33,corridors,41113.64
+Saare,35,cores,27893.28
+Saare,65,other foreground,787.16
+Saare,67,cores,882.52
+Saare,100,background (core-opening),7.12
+Saare,101,branches,0.16
+Saare,105,other foreground,167.56
+Saare,165,other foreground,4.0
+Saare,169,other foreground,113.88
+Saare,220,background (border-opening),21408.24
+Tallinn area,0,background,11687.36
+Tallinn area,1,branches,190.96
+Tallinn area,3,cores,349.84
+Tallinn area,9,islets,1479.08
+Tallinn area,17,cores,681.48
+Tallinn area,33,corridors,2617.16
+Tallinn area,35,cores,1452.04
+Tallinn area,65,other foreground,211.04
+Tallinn area,67,cores,178.36
+Tallinn area,100,background (core-opening),0.28
+Tallinn area,105,other foreground,26.08
+Tallinn area,169,other foreground,22.0
+Tallinn area,220,background (border-opening),502.36
+Whole raster,0,background,8255409.4
+Whole raster,1,branches,6719.88
+Whole raster,3,cores,14593.64
+Whole raster,9,islets,13483.12
+Whole raster,17,cores,53332.96
+Whole raster,33,corridors,111316.52
+Whole raster,35,cores,78335.64
+Whole raster,65,other foreground,2886.84
+Whole raster,67,cores,3795.88
+Whole raster,100,background (core-opening),91.08
+Whole raster,101,branches,3.12
+Whole raster,105,other foreground,1201.2
+Whole raster,109,islets,1.44
+Whole raster,133,other foreground,13.28
+Whole raster,137,other foreground,136.0
+Whole raster,165,other foreground,86.32
+Whole raster,169,other foreground,1301.8
+Whole raster,220,background (border-opening),52405.16

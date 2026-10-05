@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use these data or code, please cite the dataset and the article below."
+type: dataset
+title: "Green Infrastructure, MSPA elements and pressures in the 3 km coastal zone of Estonia: data and code for Kaskevich et al. (2024)"
+version: "1.0"
+date-released: "2026-10-05"
+authors:
+  - family-names: Kaskevich
+    given-names: Volha
+    email: volha.kaskevich@emu.ee
+    affiliation: "Institute of Agriculture and Environmental Sciences, Estonian University of Life Sciences"
+    # orcid: add the ORCID iD before deposit
+license: CC-BY-SA-4.0
+keywords:
+  - green infrastructure
+  - morphological spatial pattern analysis
+  - MSPA
+  - coastal zone
+  - Estonia
+  - landscape metrics
+  - cumulative impact
+  - hot-spot analysis
+  - Baltic Sea
+preferred-citation:
+  type: article
+  title: "Analyzing the structural elements, ecological characteristics, and impact assessment of local green infrastructure in the coastal zone of Estonia"
+  authors:
+    - family-names: Kaskevich
+      given-names: V.
+    - family-names: Villoslada
+      given-names: M.
+    - family-names: Ward
+      given-names: R. D.
+    - family-names: Sepp
+      given-names: K.
+  journal: "Ecological Indicators"
+  volume: 169
+  start: 112824
+  year: 2024
+  doi: "10.1016/j.ecolind.2024.112824"

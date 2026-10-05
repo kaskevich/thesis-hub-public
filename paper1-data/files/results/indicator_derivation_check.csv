@@ -1,0 +1,25 @@
+layer,field,rule,tolerance,identical_share,max_abs_difference
+gi_hexagons,forest_met,for_count x 400 m2,0.0,1.0,0.0
+gi_hexagons,aband_met,ab_count x 400 m2,0.0,1.0,0.0
+gi_hexagons,imperv_met,imperv_cou x 400 m2,0.0,1.0,0.0
+gi_hexagons,GN_met,GN_count x 400 m2,0.0,1.0,0.0
+gi_hexagons,frag_gi_m,frag_gi_c x 400 m2,0.0,0.99377,0.0
+gi_hexagons,perc_for,100 x forest_met / GN_met,0.001,0.99995,33.3333
+gi_hexagons,aband_perc,round(100 x aband_met / GN_met),0.0,0.99696,20.0
+gi_hexagons,imperv_per,round(100 x imperv_met / GN_met),0.0,0.99954,1500.0
+gi_hexagons,frag_gi_pr,100 x frag_gi_m / GN_met,0.001,0.99939,72.4
+gi_hexagons,road_frac,"road_lengh / GN_met (m per m2), 3 decimals",0.0005,0.99985,0.001
+gi_hexagons,for_c_norm,min-max of perc_for,0.0005,0.99681,0.0005
+gi_hexagons,ab_c_norm,min-max of aband_perc,0.0005,1.0,0.0
+gi_hexagons,imp_c_norm,min-max of imperv_per,0.0005,1.0,0.0
+gi_hexagons,road_f_nor,min-max of road_frac,0.0005,1.0,0.0005
+gi_hexagons,frag_norm,min-max of frag_gi_pr,0.0005,0.99757,0.0005
+gi_hexagons,cum_imp,sum of the five normalised indicators,0.0015,1.0,0.0
+gi_hexagons,cum_norm,min-max of cum_imp,0.0005,1.0,0.0005
+land_hexagons,for_c_norm,min-max of for_count,0.0006,1.0,0.0005
+land_hexagons,ab_c_norm,min-max of ab_count,0.0006,1.0,0.0005
+land_hexagons,imp_c_norm,min-max of imperv_cou,0.0006,1.0,0.0004
+land_hexagons,road_m_nor,min-max of road_lengh,0.0006,1.0,0.0006
+land_hexagons,frag_norm,min-max of frag_gi_c,0.0006,1.0,0.0005
+land_hexagons,cum_imp,sum of the five normalised indicators,0.0015,1.0,0.0
+land_hexagons,cum_norm,min-max of cum_imp,0.0006,1.0,0.0005

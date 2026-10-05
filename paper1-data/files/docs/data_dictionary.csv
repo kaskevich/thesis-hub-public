@@ -1,0 +1,112 @@
+file,layer,field,type,unit,description
+data/01_coastal_zone/coastal_zone_3km.gpkg,coastal_zone_3km,name,text,,name of the zone
+data/01_coastal_zone/coastal_zone_3km.gpkg,coastal_zone_3km,area_ha,real,ha,area of the land within 3 km of the coastline (union of the seven county polygons)
+data/01_coastal_zone/coastal_zone_3km.gpkg,coastline_buffer_3km,name,text,,name of the buffer
+data/01_coastal_zone/coastal_zone_3km.gpkg,coastline_buffer_3km,area_ha,real,ha,area of the 3 km buffer on both sides of the coastline (land and sea)
+data/01_coastal_zone/coastal_zone_3km.gpkg,regions_3km,region,text,,"Harju, Hiiu, Ida-Viru, Lääne, Lääne-Viru, Pärnu, Saare, Tallinn area. The Harju polygon includes the Tallinn area"
+data/01_coastal_zone/coastal_zone_3km.gpkg,regions_3km,county_code,text,,Estonian county code (MKOOD)
+data/01_coastal_zone/coastal_zone_3km.gpkg,regions_3km,zone_area_ha,real,ha,area of the region polygon (3 km zone part)
+data/01_coastal_zone/coastal_zone_3km.gpkg,regions_3km,county_area_attr_ha,real,ha,"area attribute carried by the source polygon: whole-county area for the seven counties (the values in article Table 4), polygon area for the Tallinn area"
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,etak_id,integer,,ETAK feature identifier
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,etak_code,integer,,ETAK feature class code (501 = road)
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,etak_code_label,text,,ETAK feature class name (Estonian)
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,road_type,integer,,ETAK road type code
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,road_type_label,text,,"ETAK road type (Estonian): Liiklusala traffic area, Täitmata not filled, Parkla parking, Muu other, Sport, Jalakäijate ala pedestrian area, Bussijaam bus station"
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,gi_class,text,,"GI class of the polygon the segment crosses: forest, natura2000, perm"
+data/05_pressures/roads_in_gi.gpkg,roads_in_gi,length_m,real,m,segment length
+data/02_green_infrastructure/gi_binary_20m.tif,band 1,value,uint8,,"uint8; 1 = GI, 0 = not GI. MSPA input: union of the seven county rasters (whole counties), EPSG:3301, 20 m, MSPA pixel alignment"
+data/02_green_infrastructure/gi_class_20m.tif,band 1,value,uint8,,"uint8; 0 = not in a GI polygon, 1 = forest, 2 = permanent grassland, 3 = Natura 2000 habitat; GI polygons of the 3 km zone rasterised at 20 m (cell centre) on the MSPA grid"
+data/03_mspa/mspa_coastal_3km_20m.tif,band 1,value,uint8,,"uint8; GuidosToolbox MSPA byte code, see docs/mspa_codes.csv; EPSG:3301, 20 m; no-data value not set (0 = background)"
+data/05_pressures/forest_loss_2012_2018_20m.tif,band 1,value,uint8,,"uint8; 1 = tree cover loss 2012-2018, 0 = no loss, 255 = outside the 3 km zone + 600 m or no data; EPSG:3035, 20 m"
+data/05_pressures/imperviousness_increase_2006_2018_20m.tif,band 1,value,uint8,,"uint8; 1 = imperviousness increase 2006-2018, 0 = none, 255 = outside the 3 km zone + 600 m or no data; EPSG:3035, 20 m"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,id,integer,,hexagon identifier of the QGIS grid
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,region,text,,region label (added in this release; Tallinn area = Tallinn maakond)
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,x_centroid,real,m,"hexagon centroid easting, EPSG:3301 (added in this release)"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,y_centroid,real,m,"hexagon centroid northing, EPSG:3301 (added in this release)"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,left,real,m,"bounding box of the hexagon, as written by the QGIS grid tool"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,top,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,right,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,bottom,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,county,text,,"region name as stored by the author (""Tallinn maakond"" is the Tallinn area)"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,GN_count,real,cells,20 m GI cells (gi_binary_20m.tif) whose centre lies in the hexagon
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,GN_met,real,m2,GN_count x 400
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,for_count,real,cells,20 m cells of tree cover loss 2012-2018
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,forest_met,real,m2,for_count x 400
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,perc_for,real,%,"100 x forest_met / GN_met, capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,ab_count,integer,cells,20 m cells of abandoned semi-natural grassland
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,aband_met,real,m2,ab_count x 400
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,aband_perc,integer,%,"round(100 x aband_met / GN_met), capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,imperv_cou,integer,cells,20 m cells of imperviousness increase 2006-2018
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,imperv_met,real,m2,imperv_cou x 400
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,imperv_per,integer,%,"round(100 x imperv_met / GN_met), capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,frag_gi_c,real,cells,"20 m cells of MSPA branch and islet classes (1, 9, 101, 109); about 3 % of values are fractional in the source"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,road_lengh,real,m,length of roads_in_gi inside the hexagon
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,frag_gi_m,real,m2,frag_gi_c x 400
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,frag_gi_pr,real,%,"100 x frag_gi_m / GN_met, capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,road_frac,real,m per m2,"road_lengh / GN_met, 3 decimals"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,for_c_norm,real,0-1,"min-max normalised perc_for over the 19,741 GI hexagons"
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,ab_c_norm,real,0-1,min-max normalised aband_perc over the GI hexagons
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,imp_c_norm,real,0-1,min-max normalised imperv_per over the GI hexagons
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,road_f_nor,real,0-1,min-max normalised road_frac over the GI hexagons
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,frag_norm,real,0-1,min-max normalised frag_gi_pr over the GI hexagons
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,cum_imp,real,0-5,sum of the five normalised indicators
+data/06_hexagons/hexagons_impacts.gpkg,gi_hexagons,cum_norm,real,0-1,min-max normalised cum_imp (cumulative impact; article Figs 9-10)
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,id,integer,,hexagon identifier of the QGIS grid
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,region,text,,region label (added in this release; Tallinn area = Tallinn maakond)
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,x_centroid,real,m,"hexagon centroid easting, EPSG:3301 (added in this release)"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,y_centroid,real,m,"hexagon centroid northing, EPSG:3301 (added in this release)"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,left,real,m,"bounding box of the hexagon, as written by the QGIS grid tool"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,top,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,right,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,bottom,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,county,text,,"region name as stored by the author (""Tallinn maakond"" is the Tallinn area)"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,GN_count,real,cells,20 m GI cells (gi_binary_20m.tif) whose centre lies in the hexagon
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,GN_met,real,m2,GN_count x 400
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,for_count,real,cells,20 m cells of tree cover loss 2012-2018
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,forest_met,real,m2,for_count x 400
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,perc_for,real,%,"100 x forest_met / GN_met, capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,ab_count,integer,cells,20 m cells of abandoned semi-natural grassland
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,aband_met,real,m2,ab_count x 400
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,aband_perc,integer,%,"round(100 x aband_met / GN_met), capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,imperv_cou,integer,cells,20 m cells of imperviousness increase 2006-2018
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,imperv_met,real,m2,imperv_cou x 400
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,imperv_per,integer,%,"round(100 x imperv_met / GN_met), capped at 100"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,frag_gi_c,real,cells,"20 m cells of MSPA branch and islet classes (1, 9, 101, 109); about 3 % of values are fractional in the source"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,road_lengh,real,m,length of roads_in_gi inside the hexagon
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,for_c_norm,real,0-1,"min-max normalised for_count over the 20,413 land hexagons (counts, not shares)"
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,ab_c_norm,real,0-1,min-max normalised ab_count over the land hexagons
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,imp_c_norm,real,0-1,min-max normalised imperv_cou over the land hexagons
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,road_m_nor,real,0-1,min-max normalised road_lengh over the land hexagons
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,frag_norm,real,0-1,min-max normalised frag_gi_c over the land hexagons
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,cum_imp,real,0-5,sum of the five normalised indicators
+data/06_hexagons/hexagons_impacts.gpkg,land_hexagons,cum_norm,real,0-1,min-max normalised cum_imp
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,id,integer,,hexagon identifier of the QGIS grid
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,region,text,,region label (added in this release; Tallinn area = Tallinn maakond)
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,x_centroid,real,m,"hexagon centroid easting, EPSG:3301 (added in this release)"
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,y_centroid,real,m,"hexagon centroid northing, EPSG:3301 (added in this release)"
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,left,real,m,"bounding box of the hexagon, as written by the QGIS grid tool"
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,top,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,right,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,bottom,real,m,as left
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,county,text,,as gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,fr_c_nr,real,0-1,for_c_norm of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,ab_c_nr,real,0-1,ab_c_norm of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,imp_c_n,real,0-1,imp_c_norm of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,rd_f_nr,real,0-1,road_f_nor of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,frg_nrm,real,0-1,frag_norm of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,GN_met,real,m2,GN_met of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,cum_nrm,real,0-1,cum_norm of gi_hexagons
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,localG,real,z,"Getis-Ord local G of cum_nrm: queen contiguity, binary weights, focal hexagon excluded (spdep::localG); the 53 GI hexagons without neighbours are not in this layer"
+data/06_hexagons/hexagons_impacts.gpkg,hotspots,clssfct,text,,"impact class from localG and its two-sided normal p-value: Very High (G > 0, p <= 0.01), High (p <= 0.05), Moderate (p <= 0.10), Very Low / Low / Slightly Low (G < 0, same thresholds), Neutral otherwise"
+tables/hexagons/*.csv,,(all),,,the three hexagon layers without geometry; same fields as the GeoPackage layers
+tables/table3_habitat_types_author.csv,,"category, annex1_code, area_ha, pct_of_coastal_gi",,,article Table 3 as typed by the author (Habitats_EE_Coast.numbers); no calculation trail in the working data
+tables/table4_landscape_metrics_by_county.csv,,"region, gi_elements_area_ha, branches_area_ha, cores_area_ha, corridors_area_ha, largest_core_patch_ha, mean_core_patch_area_ha, core_patch_density_per_100ha, landscape_shape_index, largest_patch_index_pct, county_total_area_ha",,,source of article Table 4 (author file landscape_statistics_fin.csv); metrics are of the core patches; county_total_area_ha is the whole county
+tables/gi_elements_area_by_region_class.csv,,"region, gi_class, element, area_ha",,,"area of cores, corridors and branches by region and GI class from the author element polygons (source of Figs 5 and 6)"
+tables/annex1_habitats_by_element_region.csv,,"region, element, annex1_code, n_polygons, area_ha",,,"Natura 2000 element polygons by Annex I code (source of Fig. 7). Codes as stored: * marks priority habitat types; several codes = mosaic; ""-"" = no code"
+tables/gi_polygons_area_by_class_habitat.csv,,"gi_class, annex1_code, n_polygons, area_ha",,,GI polygons of the 3 km zone by class and Annex I code
+tables/gi_class_share_by_county_author.csv,,"region, class, percentage",,,GI class shares by county as computed by the author (Calculated_Percentages.csv); the reference area of the percentage is not recorded
+tables/landscape_metrics/patch_metrics_cores.csv,,"region, raster_value, patch_id, area_ha, cai_pct, circle, contig, core_ha, enn_m, frac, gyrate_m, ncore, para_m_per_m2, perim_m, shape",,,landscapemetrics patch metrics of the core patches (8-neighbour)
+tables/landscape_metrics/patch_metrics_mspa_classes.csv,,as above; raster_value = MSPA code,,,patch metrics of every MSPA class per county (from the author workbook branches_patch_metrics.xlsx; the corridors workbook holds the same results except for Harju)
+tables/landscape_metrics/patch_metrics_islets.csv,,as above; raster_value 9 or 109,,,patch metrics of islet patches
+tables/landscape_metrics/landscape_level_metrics.csv,,"workbook, layer, level, class, id, metric, value, region",,,landscape-level metrics (66 per county) from the four author workbooks; for the islet workbook the raster background was treated as a class
+tables/landscape_metrics/core_metrics_by_county_table4.csv,,"county, lpi, area_mn, pd, lsi, p_area",,,"core-patch LPI (%), mean patch area (ha), patch density (per 100 ha), LSI and largest patch (ha): the Table 4 values"

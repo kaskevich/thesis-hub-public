@@ -1,0 +1,166 @@
+id,location,item,region,published_value,unit
+T3.forest,Table 3 (p. 7),Forests,Whole coast,143009.5,ha
+T3.perm,Table 3 (p. 7),Permanent grasslands,Whole coast,164.0,ha
+T3.annex1,Table 3 (p. 7),Total of Annex I habitats,Whole coast,86996.0,ha
+T3.9010,Table 3 (p. 7),(9010) Western Taiga,Whole coast,17568.0,ha
+T3.9080,Table 3 (p. 7),(9080) Fennoscandian deciduous swamp woods,Whole coast,9620.0,ha
+T3.9020,Table 3 (p. 7),(9020) Fennoscandian hemiboreal natural old broad-leaved deciduous forests,Whole coast,2165.0,ha
+T3.9070,Table 3 (p. 7),(9070) Fennoscandian wooded pastures,Whole coast,2721.5,ha
+T3.1630,Table 3 (p. 7),(1630) Boreal Baltic coastal meadows,Whole coast,18890.0,ha
+T3.6210,Table 3 (p. 7),(6210) Semi-natural dry grasslands on calcareous substrates,Whole coast,1005.0,ha
+T3.6270,Table 3 (p. 7),(6270) Fennoscandian lowland species-rich dry to mesic grasslands,Whole coast,430.0,ha
+T3.6430,Table 3 (p. 7),(6430) Hydrophilous tall herb fringe communities,Whole coast,500.0,ha
+T3.6450,Table 3 (p. 7),(6450) Northern boreal alluvial meadows,Whole coast,3220.0,ha
+T3.6510,Table 3 (p. 7),(6510) Lowland hay meadows,Whole coast,1865.0,ha
+T3.6530,Table 3 (p. 7),(6530) Fennoscandian wooded meadows,Whole coast,2210.0,ha
+T3.6280,Table 3 (p. 7),(6280) Nordic alvar and precambrian calcareous flatrocks,Whole coast,12190.0,ha
+T3.2180,Table 3 (p. 7),(2180) Wooded dunes,Whole coast,4600.0,ha
+T3.5130,Table 3 (p. 7),(5130) Juniperus communis formations,Whole coast,2424.0,ha
+T3.7110,Table 3 (p. 7),(7110) Active raised bogs,Whole coast,1700.0,ha
+T3.7120,Table 3 (p. 7),(7120) Degraded raised bogs,Whole coast,200.0,ha
+T3.7140,Table 3 (p. 7),(7140) Transition mires and quaking bogs,Whole coast,200.0,ha
+T3.7210,Table 3 (p. 7),(7210) Calcareous fens with Cladium mariscus,Whole coast,700.0,ha
+T3.7230,Table 3 (p. 7),(7230) Alkaline fens,Whole coast,2747.5,ha
+T3.91D0,Table 3 (p. 7),(91D0) Bog woodland,Whole coast,2040.0,ha
+T4.area.Ida-Viru,Table 4 (p. 11),3 km Coastline Total Area,Ida-Viru,297171,ha
+T4.area.Lääne-Viru,Table 4 (p. 11),3 km Coastline Total Area,Lääne-Viru,369574,ha
+T4.area.Harju,Table 4 (p. 11),3 km Coastline Total Area,Harju,432672,ha
+T4.area.Tallinn area,Table 4 (p. 11),3 km Coastline Total Area,Tallinn area,36238,ha
+T4.area.Lääne,Table 4 (p. 11),3 km Coastline Total Area,Lääne,181581,ha
+T4.area.Pärnu,Table 4 (p. 11),3 km Coastline Total Area,Pärnu,541939,ha
+T4.area.Hiiu,Table 4 (p. 11),3 km Coastline Total Area,Hiiu,103258,ha
+T4.area.Saare,Table 4 (p. 11),3 km Coastline Total Area,Saare,293799,ha
+T4.lp.Ida-Viru,Table 4 (p. 11),Largest Patch,Ida-Viru,711,ha
+T4.lp.Lääne-Viru,Table 4 (p. 11),Largest Patch,Lääne-Viru,2540,ha
+T4.lp.Harju,Table 4 (p. 11),Largest Patch,Harju,2322,ha
+T4.lp.Tallinn area,Table 4 (p. 11),Largest Patch,Tallinn area,498,ha
+T4.lp.Lääne,Table 4 (p. 11),Largest Patch,Lääne,3127,ha
+T4.lp.Pärnu,Table 4 (p. 11),Largest Patch,Pärnu,1474,ha
+T4.lp.Hiiu,Table 4 (p. 11),Largest Patch,Hiiu,8706,ha
+T4.lp.Saare,Table 4 (p. 11),Largest Patch,Saare,2203,ha
+T4.mpa.Ida-Viru,Table 4 (p. 11),Mean Patch Area,Ida-Viru,90,ha
+T4.mpa.Lääne-Viru,Table 4 (p. 11),Mean Patch Area,Lääne-Viru,359,ha
+T4.mpa.Harju,Table 4 (p. 11),Mean Patch Area,Harju,194,ha
+T4.mpa.Tallinn area,Table 4 (p. 11),Mean Patch Area,Tallinn area,111,ha
+T4.mpa.Lääne,Table 4 (p. 11),Mean Patch Area,Lääne,188,ha
+T4.mpa.Pärnu,Table 4 (p. 11),Mean Patch Area,Pärnu,152,ha
+T4.mpa.Hiiu,Table 4 (p. 11),Mean Patch Area,Hiiu,241,ha
+T4.mpa.Saare,Table 4 (p. 11),Mean Patch Area,Saare,154,ha
+T4.pd.Ida-Viru,Table 4 (p. 11),Patch Density,Ida-Viru,1.11,per km2
+T4.pd.Lääne-Viru,Table 4 (p. 11),Patch Density,Lääne-Viru,0.28,per km2
+T4.pd.Harju,Table 4 (p. 11),Patch Density,Harju,0.52,per km2
+T4.pd.Tallinn area,Table 4 (p. 11),Patch Density,Tallinn area,0.90,per km2
+T4.pd.Lääne,Table 4 (p. 11),Patch Density,Lääne,0.53,per km2
+T4.pd.Pärnu,Table 4 (p. 11),Patch Density,Pärnu,0.66,per km2
+T4.pd.Hiiu,Table 4 (p. 11),Patch Density,Hiiu,0.41,per km2
+T4.pd.Saare,Table 4 (p. 11),Patch Density,Saare,0.65,per km2
+T4.lsi.Ida-Viru,Table 4 (p. 11),Landscape Shape Index,Ida-Viru,6.88,index
+T4.lsi.Lääne-Viru,Table 4 (p. 11),Landscape Shape Index,Lääne-Viru,9.48,index
+T4.lsi.Harju,Table 4 (p. 11),Landscape Shape Index,Harju,15.7,index
+T4.lsi.Tallinn area,Table 4 (p. 11),Landscape Shape Index,Tallinn area,6.64,index
+T4.lsi.Lääne,Table 4 (p. 11),Landscape Shape Index,Lääne,14.2,index
+T4.lsi.Pärnu,Table 4 (p. 11),Landscape Shape Index,Pärnu,15.2,index
+T4.lsi.Hiiu,Table 4 (p. 11),Landscape Shape Index,Hiiu,14.6,index
+T4.lsi.Saare,Table 4 (p. 11),Landscape Shape Index,Saare,23.8,index
+T4.lpi.Ida-Viru,Table 4 (p. 11),Largest Patch Index,Ida-Viru,27.2,%
+T4.lpi.Lääne-Viru,Table 4 (p. 11),Largest Patch Index,Lääne-Viru,20.2,%
+T4.lpi.Harju,Table 4 (p. 11),Largest Patch Index,Harju,9.76,%
+T4.lpi.Tallinn area,Table 4 (p. 11),Largest Patch Index,Tallinn area,18.7,%
+T4.lpi.Lääne,Table 4 (p. 11),Largest Patch Index,Lääne,16.3,%
+T4.lpi.Pärnu,Table 4 (p. 11),Largest Patch Index,Pärnu,7.7,%
+T4.lpi.Hiiu,Table 4 (p. 11),Largest Patch Index,Hiiu,35.1,%
+T4.lpi.Saare,Table 4 (p. 11),Largest Patch Index,Saare,4.6,%
+T5.forest.Ida-Viru,Table 5 (p. 12),Forest Cover Loss,Ida-Viru,337.9,ha
+T5.forest.Lääne-Viru,Table 5 (p. 12),Forest Cover Loss,Lääne-Viru,779.1,ha
+T5.forest.Harju,Table 5 (p. 12),Forest Cover Loss,Harju,1435.0,ha
+T5.forest.Tallinn area,Table 5 (p. 12),Forest Cover Loss,Tallinn area,156.3,ha
+T5.forest.Lääne,Table 5 (p. 12),Forest Cover Loss,Lääne,1479.9,ha
+T5.forest.Pärnu,Table 5 (p. 12),Forest Cover Loss,Pärnu,1644.8,ha
+T5.forest.Hiiu,Table 5 (p. 12),Forest Cover Loss,Hiiu,2114.9,ha
+T5.forest.Saare,Table 5 (p. 12),Forest Cover Loss,Saare,3659.6,ha
+T5.aband.Ida-Viru,Table 5 (p. 12),Grassland Abandonment,Ida-Viru,6.6,ha
+T5.aband.Lääne-Viru,Table 5 (p. 12),Grassland Abandonment,Lääne-Viru,455.2,ha
+T5.aband.Harju,Table 5 (p. 12),Grassland Abandonment,Harju,1651.7,ha
+T5.aband.Tallinn area,Table 5 (p. 12),Grassland Abandonment,Tallinn area,57.4,ha
+T5.aband.Lääne,Table 5 (p. 12),Grassland Abandonment,Lääne,3074.4,ha
+T5.aband.Pärnu,Table 5 (p. 12),Grassland Abandonment,Pärnu,2568.6,ha
+T5.aband.Hiiu,Table 5 (p. 12),Grassland Abandonment,Hiiu,1823.9,ha
+T5.aband.Saare,Table 5 (p. 12),Grassland Abandonment,Saare,6858.3,ha
+T5.imperv.Ida-Viru,Table 5 (p. 12),Impervious Surfaces,Ida-Viru,7.0,ha
+T5.imperv.Lääne-Viru,Table 5 (p. 12),Impervious Surfaces,Lääne-Viru,4.3,ha
+T5.imperv.Harju,Table 5 (p. 12),Impervious Surfaces,Harju,2.5,ha
+T5.imperv.Tallinn area,Table 5 (p. 12),Impervious Surfaces,Tallinn area,4.3,ha
+T5.imperv.Lääne,Table 5 (p. 12),Impervious Surfaces,Lääne,0.4,ha
+T5.imperv.Pärnu,Table 5 (p. 12),Impervious Surfaces,Pärnu,3.4,ha
+T5.imperv.Hiiu,Table 5 (p. 12),Impervious Surfaces,Hiiu,0.8,ha
+T5.imperv.Saare,Table 5 (p. 12),Impervious Surfaces,Saare,1.9,ha
+T5.frag.Ida-Viru,Table 5 (p. 12),GI Fragmentation,Ida-Viru,1988.8,ha
+T5.frag.Lääne-Viru,Table 5 (p. 12),GI Fragmentation,Lääne-Viru,550.6,ha
+T5.frag.Harju,Table 5 (p. 12),GI Fragmentation,Harju,2626.1,ha
+T5.frag.Tallinn area,Table 5 (p. 12),GI Fragmentation,Tallinn area,550.6,ha
+T5.frag.Lääne,Table 5 (p. 12),GI Fragmentation,Lääne,1373.1,ha
+T5.frag.Pärnu,Table 5 (p. 12),GI Fragmentation,Pärnu,3985.7,ha
+T5.frag.Hiiu,Table 5 (p. 12),GI Fragmentation,Hiiu,1329.8,ha
+T5.frag.Saare,Table 5 (p. 12),GI Fragmentation,Saare,3926.5,ha
+T5.road.Ida-Viru,Table 5 (p. 12),Road Density,Ida-Viru,0.0004,km/km2
+T5.road.Lääne-Viru,Table 5 (p. 12),Road Density,Lääne-Viru,0.0004,km/km2
+T5.road.Harju,Table 5 (p. 12),Road Density,Harju,0.0725,km/km2
+T5.road.Tallinn area,Table 5 (p. 12),Road Density,Tallinn area,0.0004,km/km2
+T5.road.Lääne,Table 5 (p. 12),Road Density,Lääne,0.0009,km/km2
+T5.road.Pärnu,Table 5 (p. 12),Road Density,Pärnu,0.0005,km/km2
+T5.road.Hiiu,Table 5 (p. 12),Road Density,Hiiu,0.3325,km/km2
+T5.road.Saare,Table 5 (p. 12),Road Density,Saare,0.1984,km/km2
+F5.total,Section 4.1 (p. 5) and Fig. 3,Total GI area,Whole coast,283269,ha
+F5.cores.forest,Fig. 5 (p. 9),Forest cores,Whole coast,81444,ha
+F5.cores.natura2000,Fig. 5 (p. 9),Natura 2000 cores,Whole coast,68147,ha
+F5.cores.perm,Fig. 5 (p. 9),Permanent meadow cores,Whole coast,16,ha
+F5.corridors.forest,Fig. 5 (p. 9),Forest corridors,Whole coast,68521,ha
+F5.corridors.natura2000,Fig. 5 (p. 9),Natura 2000 corridors,Whole coast,39208,ha
+F5.corridors.perm,Fig. 5 (p. 9),Permanent meadow corridors,Whole coast,102,ha
+F5.branches.forest,Fig. 5 (p. 9) and Section 4.1,Forest branches,Whole coast,2835,ha
+F5.branches.natura2000,Fig. 5 (p. 9) and Section 4.1,Natura 2000 branches,Whole coast,2041,ha
+F5.branches.perm,Fig. 5 (p. 9) and Section 4.1,Permanent meadow branches,Whole coast,45,ha
+TX.cores.forest,Section 4.1 (p. 5) and Section 5.1 (p. 8),Forest cores (text),Whole coast,81254,ha
+TX.cores.natura2000,Section 4.1 (p. 5) and Section 5.1 (p. 8),Natura 2000 cores (text),Whole coast,58447,ha
+TX.corridors.forest,Section 5.1 (p. 8),Forest corridors (text),Whole coast,58920,ha
+TX.corridors.natura2000,Section 5.1 (p. 9),Natura 2000 corridors (text),Whole coast,31767,ha
+F6.cores.forest.Harju,Section 4.1 (p. 5),Forest cores,Harju,15191,ha
+F6.cores.natura2000.Lääne-Viru,Section 4.1 (p. 5),Natura 2000 cores,Lääne-Viru,5640,ha
+F6.cores.forest.Saare,Section 4.1 (p. 5),Forest cores,Saare,24606,ha
+F6.cores.natura2000.Saare,Section 4.1 (p. 5),Natura 2000 cores,Saare,23165,ha
+F6.corridors.forest.Saare,Section 4.1 (p. 5),Forest corridors,Saare,24174,ha
+F6.corridors.forest.Harju,Section 4.1 (p. 5),Forest corridors,Harju,11234,ha
+F6.corridors.forest.Hiiu,Section 4.1 (p. 5),Forest corridors,Hiiu,9514,ha
+F6.corridors.forest.Pärnu,Section 4.1 (p. 5),Forest corridors,Pärnu,8345,ha
+F6.corridors.forest.Lääne,Section 4.1 (p. 5),Forest corridors,Lääne,9228,ha
+F6.branches.natura2000.Saare,Section 4.1 (p. 5),Natura 2000 branches,Saare,1487,ha
+F6.branches.forest.Saare,Section 4.1 (p. 5),Forest branches,Saare,826,ha
+F6.branches.forest.Ida-Viru,Section 4.1 (p. 5),Forest branches,Ida-Viru,182,ha
+F6.branches.natura2000.Ida-Viru,Section 4.1 (p. 5),Natura 2000 branches,Ida-Viru,11,ha
+F6.branches.perm.Saare,Section 4.1 (p. 5),Permanent meadow branches,Saare,27,ha
+F7.9010.cores,Section 4.1 (p. 5) and Section 5.1 (p. 8),9010 in cores,Whole coast,11700,ha
+F7.9010.cores.Saare,Section 4.1 (p. 5),9010 in cores,Saare,5000,ha
+F7.9010.corridors,Section 5.1 (p. 8),9010 in corridors,Whole coast,3810,ha
+F7.9010.branches,Section 5.1 (p. 8),9010 in branches,Whole coast,68,ha
+F7.1630.cores,Section 4.1 (p. 5),1630 in cores (Section 5.1 gives 8500),Whole coast,8600,ha
+F7.1630.corridors_branches,Section 4.1 (p. 5) and Section 5.1 (p. 8),1630 in corridors and branches,Whole coast,10390,ha
+F7.6280.cores.Saare,Section 4.1 (p. 5),6280 (element not stated; compared with cores),Saare,4000,ha
+F7.6280.cores.Hiiu,Section 4.1 (p. 5),6280 (element not stated; compared with cores),Hiiu,800,ha
+F7.2180.cores.HHP,Section 4.1 (p. 5),2180 in Harju + Hiiu + Pärnu (element not stated; compared with cores),Harju+Hiiu+Pärnu,3600,ha
+GS.Hiiu,Section 4.1 (p. 5),Share of coastal area designated as GI,Hiiu,41.1,%
+GS.Lääne,Section 4.1 (p. 5),Share of coastal area designated as GI,Lääne,19.5,%
+GS.Saare,Section 4.1 (p. 5),Share of coastal area designated as GI,Saare,32.4,%
+GS.Harju,Section 4.1 (p. 5),Share of coastal area designated as GI,Harju,9.2,%
+GS.Pärnu,Section 4.1 (p. 5),Share of coastal area designated as GI,Pärnu,7.7,%
+GS.Ida-Viru,Section 4.1 (p. 5),Share of coastal area designated as GI,Ida-Viru,2.9,%
+GS.Lääne-Viru,Section 4.1 (p. 5),Share of coastal area designated as GI,Lääne-Viru,5.5,%
+DZ.aband.Saare-Tallinn,Section 4.3 (p. 7),Dunn z: grassland abandonment Saare vs Tallinn area,Saare / Tallinn area,14.99,z
+DZ.frag.Ida-Viru-Tallinn,Section 4.3 (p. 7),Dunn z: GI fragmentation Ida-Viru and Tallinn area,Ida-Viru / Tallinn area,-19.94,z
+F9.cum.Harju-Ida-Viru,Fig. 9B (p. 14),Dunn z: cumulative impact Harju vs Ida-Viru,Harju / Ida-Viru,-12.35,z
+F9.cum.Hiiu-Ida-Viru,Fig. 9B (p. 14),Dunn z: cumulative impact Hiiu vs Ida-Viru,Hiiu / Ida-Viru,-13.80,z
+F9.cum.Ida-Viru-Lääne-Viru,Fig. 9B (p. 14),Dunn z: cumulative impact Ida-Viru vs Lääne-Viru,Ida-Viru / Lääne-Viru,16.93,z
+F9.cum.Pärnu-Saare,Fig. 9B (p. 14),Dunn z: cumulative impact Pärnu vs Saare,Pärnu / Saare,8.74,z
+GG.G,Section 4.3.1 (p. 7),Global G,Whole coast,5.39e-4,
+GG.E,Section 4.3.1 (p. 7),Global G expectation,Whole coast,2.76e-4,
+GG.V,Section 4.3.1 (p. 7),Global G variance,Whole coast,6.95e-9,
+GG.Z,Section 4.3.1 (p. 7),Global G 'standard deviation',Whole coast,103.25,

@@ -1,0 +1,19 @@
+mspa_code,gtb_class,element_in_this_release,note
+0,Background,background,"not GI, or outside the coastal zone"
+1,Branch,branches,
+3,Edge,cores,outer boundary of a core
+9,Islet,islets,
+17,Core,cores,
+33,Bridge,corridors,
+35,Bridge in edge (transition),cores,bridge pixel crossing a core edge
+65,Loop,other foreground,
+67,Loop in edge (transition),cores,loop pixel crossing a core edge
+100,Core-opening,background (core-opening),background class written when Intext = 1 (see the GuidosToolbox MSPA guide)
+101,"Branch, internal",branches,inside a perforation (Intext offset +100)
+105,"Perforation, internal",other foreground,Intext offset +100
+109,"Islet, internal",islets,inside a core-opening (Intext offset +100)
+133,"Bridge, internal",other foreground,Intext offset +100
+137,"Bridge in perforation, internal",other foreground,Intext offset +100
+165,"Loop, internal",other foreground,Intext offset +100
+169,"Loop in perforation, internal",other foreground,Intext offset +100
+220,Border-opening,background (border-opening),background class written when Intext = 1 (see the GuidosToolbox MSPA guide)

@@ -1,0 +1,47 @@
+/* Shared styles of the Paper I data pages (map viewer and file browser) */
+:root{
+  --bg:#fbfbf8; --surface:#ffffff; --surface-2:#f4f5f1; --ink:#1d2421; --ink-2:#4a5450; --ink-3:#6f7a75;
+  --rule:#e2e5e0; --rule-2:#eef0ec; --accent:#1f6a57; --accent-ink:#ffffff; --accent-soft:#e6f1ed;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121614; --surface:#181d1b; --surface-2:#1e2422; --ink:#e7ebe8; --ink-2:#b6bfba; --ink-3:#8d9792;
+    --rule:#2b322f; --rule-2:#222826; --accent:#6cc2a6; --accent-ink:#0d1311; --accent-soft:#1d2b26;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121614; --surface:#181d1b; --surface-2:#1e2422; --ink:#e7ebe8; --ink-2:#b6bfba; --ink-3:#8d9792;
+  --rule:#2b322f; --rule-2:#222826; --accent:#6cc2a6; --accent-ink:#0d1311; --accent-soft:#1d2b26;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans)}
+a{color:var(--accent);text-underline-offset:2px}
+button,input,select{font:inherit;color:inherit}
+.bar{display:flex;align-items:center;gap:14px;height:52px;padding:0 16px;border-bottom:1px solid var(--rule);background:var(--surface)}
+.bar .back{color:var(--ink-3);text-decoration:none;font-size:13px;white-space:nowrap}
+.bar .back:hover{color:var(--accent)}
+.bar h1{font-family:var(--serif);font-size:18px;font-weight:600;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar nav{margin-left:auto;display:flex;gap:6px}
+.bar nav a{font-size:13px;text-decoration:none;color:var(--ink-2);padding:6px 10px;border-radius:6px;border:1px solid transparent;white-space:nowrap}
+.bar nav a:hover{border-color:var(--rule)}
+.bar nav a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.muted{color:var(--ink-3)}
+.small{font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:6px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);text-decoration:none;font-size:13px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tablewrap{overflow:auto;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+table.data{border-collapse:collapse;width:100%;font-size:13px}
+table.data th,table.data td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+table.data th{position:sticky;top:0;background:var(--surface-2);font-size:12px;color:var(--ink-2);font-weight:600;white-space:nowrap}
+table.data td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.data tr:last-child td{border-bottom:none}
+@media (max-width:760px){
+  .bar{gap:10px}
+  .bar h1{font-size:16px}
+  .bar .back span{display:none}
+}

@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper I map viewer</title>
+<meta name="description" content="Interactive map of the Paper I data release: MSPA elements, GI classes, pressures, hexagon indicators and hot spots in the 3 km coastal zone of Estonia.">
+<link rel="stylesheet" href="lib/leaflet.css">
+<link rel="stylesheet" href="assets/p1.css">
+<style>
+body{overflow:hidden}
+.layout{position:relative;display:flex;height:calc(100vh - 52px);height:calc(100dvh - 52px)}
+#panel{width:310px;flex:0 0 310px;overflow-y:auto;background:var(--surface);border-right:1px solid var(--rule);padding:6px 16px 20px}
+#panel section{padding:12px 0;border-bottom:1px solid var(--rule-2)}
+#panel h2{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px;font-weight:600}
+#panel label{display:flex;align-items:center;gap:8px;padding:3px 0;cursor:pointer;font-size:14px}
+#panel .row{display:flex;flex-wrap:wrap;gap:4px 14px}
+#panel select{width:100%;padding:6px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+#panel input[type=range]{width:100%;accent-color:var(--accent)}
+#panel input[type=checkbox],#panel input[type=radio]{accent-color:var(--accent)}
+#map{flex:1;min-width:0;background:var(--surface-2)}
+.lg{margin:0 0 12px}
+.lg b{display:block;font-size:13px;margin-bottom:4px}
+.sw{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2);margin:2px 0}
+.sw i{width:14px;height:14px;border-radius:3px;flex:0 0 14px;border:1px solid rgba(0,0,0,.08)}
+.sw i.line{height:3px;border:none;border-radius:2px}
+.sw i.outline{background:transparent!important;border:2px solid var(--ink)}
+.ramp{height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.08)}
+.ticks{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.note{font-size:12.5px;color:var(--ink-3);margin:10px 0 0}
+.pix{image-rendering:pixelated}
+.greytiles{filter:grayscale(1) brightness(1.06) contrast(.82)}
+@media (prefers-color-scheme: dark){.greytiles{filter:grayscale(1) invert(.92) brightness(.95) contrast(.85)}}
+.leaflet-container{font:13px/1.45 var(--sans)}
+.leaflet-popup-content{margin:10px 12px;min-width:230px}
+.leaflet-popup-content table{border-collapse:collapse;width:100%}
+.leaflet-popup-content td{padding:2px 0;border-bottom:1px solid #eef0ec;font-size:12.5px}
+.leaflet-popup-content td+td{text-align:right;padding-left:12px;font-variant-numeric:tabular-nums}
+.leaflet-popup-content h3{font-size:14px;margin:0 0 6px}
+.rlabel{background:transparent;border:none;box-shadow:none;font-weight:600;color:#1d2421;text-shadow:0 0 3px #fff,0 0 3px #fff}
+.rlabel::before{display:none}
+#toggle{display:none;position:absolute;right:12px;top:12px;z-index:1000;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+#loading{position:absolute;right:12px;bottom:40px;z-index:1000;background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:4px 10px;font-size:12.5px;display:none}
+@media (max-width:760px){
+  #panel{position:absolute;z-index:1001;left:0;top:0;bottom:0;width:86%;max-width:330px;transform:translateX(-102%);transition:transform .2s ease;box-shadow:2px 0 8px rgba(0,0,0,.15)}
+  #panel.open{transform:none}
+  #toggle{display:inline-flex}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="back" href="./">← <span>Data release</span></a>
+  <h1>Map viewer</h1>
+  <nav><a class="on" href="map.html">Map</a><a href="browse.html">Files</a><a href="./#files">Download</a></nav>
+</header>
+<div class="layout">
+  <aside id="panel" aria-label="Map layers">
+    <section>
+      <h2>Green Infrastructure</h2>
+      <label><input type="checkbox" data-r="mspa"> MSPA elements</label>
+      <label><input type="checkbox" data-r="giclass"> GI classes</label>
+      <label><input type="checkbox" data-r="gibinary"> GI, MSPA input</label>
+    </section>
+    <section>
+      <h2>Pressures</h2>
+      <label><input type="checkbox" data-r="forestloss"> Tree cover loss 2012–2018</label>
+      <label><input type="checkbox" data-r="imperv"> Imperviousness increase 2006–2018</label>
+      <label><input type="checkbox" data-v="roads"> Roads crossing GI</label>
+    </section>
+    <section>
+      <h2>Hexagons, 500 m</h2>
+      <select id="hexsel" aria-label="Hexagon attribute">
+        <option value="">Off</option>
+        <option value="cum_norm">Cumulative impact</option>
+        <option value="for_c_norm">Tree cover loss (normalised)</option>
+        <option value="ab_c_norm">Grassland abandonment (normalised)</option>
+        <option value="imp_c_norm">Imperviousness increase (normalised)</option>
+        <option value="road_f_nor">Road density in GI (normalised)</option>
+        <option value="frag_norm">GI fragmentation (normalised)</option>
+        <option value="hotspot">Hot-spot class</option>
+        <option value="localG">Local G (z)</option>
+      </select>
+    </section>
+    <section>
+      <h2>Boundaries</h2>
+      <label><input type="checkbox" data-v="regions"> Regions</label>
+      <label><input type="checkbox" data-v="zone"> 3 km coastal zone</label>
+    </section>
+    <section>
+      <h2>Display</h2>
+      <label for="opacity" style="cursor:default">Opacity</label>
+      <input type="range" id="opacity" min="0.2" max="1" step="0.05" value="0.85">
+      <div class="row" style="margin-top:8px">
+        <label><input type="radio" name="base" value="grey"> Grey base map</label>
+        <label><input type="radio" name="base" value="osm"> OpenStreetMap</label>
+        <label><input type="radio" name="base" value="none"> None</label>
+      </div>
+    </section>
+    <section id="legend"><h2>Legend</h2><div id="legendbody"></div>
+      <p class="note">Click a hexagon or a road for its values. Rasters are shown at their 20 m cells from zoom level 11 and as a coarser overview below it. Every layer can be downloaded from the <a href="./#files">data release</a> and inspected in the <a href="browse.html">file browser</a>.</p>
+    </section>
+  </aside>
+  <div id="map" role="application" aria-label="Map"></div>
+  <button id="toggle" class="btn" type="button" aria-controls="panel">Layers</button>
+  <div id="loading">Loading…</div>
+</div>
+<script src="lib/leaflet.js"></script>
+<script src="lib/proj4.js"></script>
+<script>
+(function () {
+  'use strict';
+  var DETAIL_ZOOM = 11;
+  var SEQ = ['#f7f4e9', '#f3c27a', '#d9622b', '#8c1d18'];
+  var DIV = ['#2166ac', '#92c5de', '#f2f2f2', '#f4a582', '#b2182b'];
+  var HEXLABEL = {cum_norm: 'Cumulative impact', for_c_norm: 'Tree cover loss', ab_c_norm: 'Grassland abandonment',
+    imp_c_norm: 'Imperviousness increase', road_f_nor: 'Road density in GI', frag_norm: 'GI fragmentation',
+    hotspot: 'Hot-spot class', localG: 'Local G (z)'};
+  var state = {rasters: [], vectors: [], hex: '', base: '', opacity: 0.85};
+
+  var map = L.map('map', {zoomControl: true, minZoom: 6, maxZoom: 16}).setView([58.75, 24.2], 7);
+  map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
+  map.attributionControl.addAttribution('Data: Kaskevich (2026), CC BY-SA 4.0, with modified Copernicus Land Monitoring Service, Estonian Land Board and PRIA data');
+  map.createPane('rasters').style.zIndex = 350;
+  map.createPane('hex').style.zIndex = 380;
+  map.createPane('vec').style.zIndex = 420;
+  var hexRenderer = L.canvas({pane: 'hex', padding: 0.4});
+  var vecRenderer = L.canvas({pane: 'vec', padding: 0.4, tolerance: 6});
+
+  var OSM = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+  var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+  var bases = {
+    grey: L.tileLayer(OSM, {maxZoom: 19, attribution: OSM_ATTR, className: 'greytiles'}),
+    osm: L.tileLayer(OSM, {maxZoom: 19, attribution: OSM_ATTR})
+  };
+  var baseLayer = null;
+  function setBase(k) {
+    if (baseLayer) map.removeLayer(baseLayer);
+    baseLayer = bases[k] || null;
+    if (baseLayer) baseLayer.addTo(map);
+    state.base = k;
+  }
+
+  var loading = document.getElementById('loading'), pending = 0;
+  function busy(d) { pending += d; loading.style.display = pending > 0 ? 'block' : 'none'; }
+  function getJSON(url) { busy(1); return fetch(url).then(function (r) { if (!r.ok) throw new Error(url); return r.json(); }).finally(function () { busy(-1); }); }
+
+  function lerp(stops, t) {
+    t = Math.max(0, Math.min(1, t));
+    var n = stops.length - 1, i = Math.min(n - 1, Math.floor(t * n)), f = t * n - i;
+    var a = stops[i], b = stops[i + 1];
+    var c = [1, 3, 5].map(function (k) { return Math.round(parseInt(a.substr(k, 2), 16) * (1 - f) + parseInt(b.substr(k, 2), 16) * f); });
+    return 'rgb(' + c.join(',') + ')';
+  }
+  function bnds(b) { return L.latLngBounds([b[0], b[1]], [b[2], b[3]]); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
+
+  /* ---------------- rasters: overview below DETAIL_ZOOM, 20 m chunks in view above it */
+  var RM = null, ovl = {};
+  function refreshRasters() {
+    if (!RM) return;
+    var z = map.getZoom(), view = map.getBounds().pad(0.3);
+    Object.keys(RM.layers).forEach(function (k) {
+      var spec = RM.layers[k], st = ovl[k] || (ovl[k] = {ov: null, ch: {}});
+      var on = state.rasters.indexOf(k) >= 0, detail = on && z >= DETAIL_ZOOM;
+      if (on && !detail) {
+        if (!st.ov) st.ov = L.imageOverlay('preview/map/' + spec.overview.src, bnds(spec.overview.bounds), {pane: 'rasters', opacity: state.opacity, className: 'pix'});
+        if (!map.hasLayer(st.ov)) st.ov.addTo(map);
+      } else if (st.ov && map.hasLayer(st.ov)) map.removeLayer(st.ov);
+      spec.chunks.forEach(function (c) {
+        var want = detail && view.intersects(bnds(c.bounds)), o = st.ch[c.src];
+        if (want && !o) { o = st.ch[c.src] = L.imageOverlay('preview/map/' + c.src, bnds(c.bounds), {pane: 'rasters', opacity: state.opacity, className: 'pix'}).addTo(map); }
+        else if (!want && o) { map.removeLayer(o); delete st.ch[c.src]; }
+      });
+    });
+  }
+  function setOpacity(v) {
+    state.opacity = v;
+    Object.keys(ovl).forEach(function (k) {
+      if (ovl[k].ov) ovl[k].ov.setOpacity(v);
+      Object.keys(ovl[k].ch).forEach(function (s) { ovl[k].ch[s].setOpacity(v); });
+    });
+    if (hexGroup) restyleHex();
+  }
+  map.on('moveend', function () { refreshRasters(); writeHash(); });
+
+  /* ---------------- vectors */
+  var vec = {}, vecLoad = {};
+  var VEC = {
+    roads: {url: 'preview/map/roads.geojson', make: function (gj) {
+      return L.geoJSON(gj, {renderer: vecRenderer, pane: 'vec', style: {color: '#1f3a5f', weight: 1.8, opacity: 0.9},
+        onEachFeature: function (f, l) {
+          var p = f.properties;
+          l.bindPopup('<h3>Road crossing GI</h3><table><tr><td>Road type</td><td>' + esc(p.road_type_label) + '</td></tr><tr><td>GI class crossed</td><td>' + esc(p.gi_class) +
+            '</td></tr><tr><td>Length</td><td>' + Number(p.length_m).toFixed(1) + ' m</td></tr><tr><td>ETAK id</td><td>' + esc(p.etak_id) + '</td></tr></table>');
+          l.on('click', function (e) { L.DomEvent.stopPropagation(e); });
+        }});
+    }},
+    regions: {url: 'preview/map/regions.geojson', make: function (gj) {
+      var g = L.geoJSON(gj, {renderer: vecRenderer, pane: 'vec', interactive: false,
+        style: function (f) { return {color: f.properties.region === 'Tallinn area' ? '#6f7a75' : '#1d2421', weight: 1.2, fill: false, dashArray: f.properties.region === 'Tallinn area' ? '4 3' : null}; }});
+      var labels = L.layerGroup();
+      g.eachLayer(function (l) {
+        var p = l.feature.properties, c = l.getBounds().getCenter();
+        labels.addLayer(L.tooltip({permanent: true, direction: 'center', className: 'rlabel', interactive: false}).setLatLng(c).setContent(esc(p.region)));
+      });
+      return L.layerGroup([g, labels]);
+    }},
+    zone: {url: 'preview/map/zone.geojson', make: function (gj) {
+      return L.geoJSON(gj, {renderer: vecRenderer, pane: 'vec', interactive: false, style: {color: '#1f6a57', weight: 1.4, fill: false}});
+    }}
+  };
+  function setVector(k, on) {
+    var i = state.vectors.indexOf(k);
+    if (on && i < 0) state.vectors.push(k);
+    if (!on && i >= 0) state.vectors.splice(i, 1);
+    if (on) {
+      if (vec[k]) { vec[k].addTo(map); return; }
+      if (!vecLoad[k]) vecLoad[k] = getJSON(VEC[k].url).then(function (gj) { vec[k] = VEC[k].make(gj); return vec[k]; });
+      vecLoad[k].then(function (l) { if (state.vectors.indexOf(k) >= 0) l.addTo(map); legend(); });
+    } else if (vec[k]) map.removeLayer(vec[k]);
+  }
+
+  /* ---------------- hexagons */
+  var HX = null, hexGroup = null, polys = [], grid = {}, conv = null, hexLoad = null;
+  function loadHex() {
+    if (hexLoad) return hexLoad;
+    hexLoad = getJSON('preview/map/hexagons.json').then(function (d) {
+      HX = d; HX.i = {}; d.fields.forEach(function (f, i) { HX.i[f] = i; });
+      conv = proj4(d.proj4, 'EPSG:4326');
+      hexGroup = L.layerGroup();
+      d.rows.forEach(function (r, n) {
+        var x = r[HX.i.x], y = r[HX.i.y];
+        var ll = d.vertices.map(function (v) { var q = conv.forward([x + v[0], y + v[1]]); return [q[1], q[0]]; });
+        var p = L.polygon(ll, {renderer: hexRenderer, pane: 'hex', interactive: false, stroke: false, fillOpacity: 0.8});
+        polys.push(p); hexGroup.addLayer(p);
+        var key = Math.floor(x / 500) + '_' + Math.floor(y / 500);
+        (grid[key] = grid[key] || []).push(n);
+      });
+    });
+    return hexLoad;
+  }
+  function hexColor(r) {
+    var f = state.hex;
+    if (f === 'hotspot') { var c = r[HX.i.hotspot]; return c < 0 ? null : HX.hotspot_colors[c]; }
+    if (f === 'localG') { var g = r[HX.i.localG]; return g === null ? null : lerp(DIV, (g + 3) / 6); }
+    return lerp(SEQ, r[HX.i[f]]);
+  }
+  function restyleHex() {
+    HX.rows.forEach(function (r, n) {
+      var c = hexColor(r);
+      polys[n].setStyle(c ? {fillColor: c, fillOpacity: Math.min(0.95, state.opacity), stroke: false} : {fillColor: '#9aa29e', fillOpacity: 0.25, stroke: false});
+    });
+  }
+  function setHex(f) {
+    state.hex = f;
+    if (!f) { if (hexGroup) map.removeLayer(hexGroup); legend(); writeHash(); return; }
+    loadHex().then(function () { restyleHex(); if (state.hex) hexGroup.addTo(map); legend(); });
+    writeHash();
+  }
+  function findHex(latlng) {
+    var q = conv.inverse([latlng.lng, latlng.lat]), x = q[0], y = q[1];
+    var gx = Math.floor(x / 500), gy = Math.floor(y / 500), best = -1, bd = 1e12;
+    for (var i = -1; i <= 1; i++) for (var j = -1; j <= 1; j++) {
+      (grid[(gx + i) + '_' + (gy + j)] || []).forEach(function (n) {
+        var r = HX.rows[n], d = Math.pow(r[HX.i.x] - x, 2) + Math.pow(r[HX.i.y] - y, 2);
+        if (d < bd) { bd = d; best = n; }
+      });
+    }
+    return bd <= 289 * 289 ? best : -1;
+  }
+  function fmt(v, d) { return v === null || v === undefined ? '–' : Number(v).toFixed(d); }
+  map.on('click', function (e) {
+    if (!state.hex || !HX) return;
+    var n = findHex(e.latlng);
+    if (n < 0) return;
+    var r = HX.rows[n], I = HX.i, hc = r[I.hotspot];
+    var rows = [
+      ['Region', esc(HX.regions[r[I.region]])],
+      ['<b>Cumulative impact</b>', '<b>' + fmt(r[I.cum_norm], 3) + '</b>'],
+      ['Tree cover loss', fmt(r[I.for_c_norm], 3) + ' <span style="color:#6f7a75">(' + fmt(r[I.perc_for], 1) + ' % of GI)</span>'],
+      ['Grassland abandonment', fmt(r[I.ab_c_norm], 3) + ' <span style="color:#6f7a75">(' + r[I.aband_perc] + ' %)</span>'],
+      ['Imperviousness increase', fmt(r[I.imp_c_norm], 3) + ' <span style="color:#6f7a75">(' + r[I.imperv_per] + ' %)</span>'],
+      ['Road density in GI', fmt(r[I.road_f_nor], 3) + ' <span style="color:#6f7a75">(' + fmt(r[I.road_frac], 3) + ' m/m²)</span>'],
+      ['GI fragmentation', fmt(r[I.frag_norm], 3) + ' <span style="color:#6f7a75">(' + fmt(r[I.frag_gi_pr], 1) + ' %)</span>'],
+      ['GI area', fmt(r[I.gi_ha], 2) + ' ha'],
+      ['Local G (z)', fmt(r[I.localG], 2)],
+      ['Hot-spot class', hc < 0 ? 'not analysed (no neighbours)' : esc(HX.hotspot_classes[hc])]
+    ];
+    L.popup().setLatLng(e.latlng).setContent('<h3>Hexagon ' + r[I.id] + '</h3><table>' + rows.map(function (x) { return '<tr><td>' + x[0] + '</td><td>' + x[1] + '</td></tr>'; }).join('') +
+      '</table><div style="margin-top:6px;font-size:11.5px;color:#6f7a75">Normalised values 0–1 (raw share in brackets). Layer gi_hexagons, data/06_hexagons.</div>').openOn(map);
+  });
+
+  /* ---------------- legend */
+  function sw(color, label, cls) { return '<div class="sw"><i class="' + (cls || '') + '" style="background:' + color + '"></i>' + esc(label) + '</div>'; }
+  function legend() {
+    var h = '';
+    state.rasters.forEach(function (k) {
+      if (!RM) return;
+      var L0 = RM.layers[k];
+      h += '<div class="lg"><b>' + esc(L0.title) + '</b>' + L0.legend.map(function (x) { return sw(x.color, x.label); }).join('') + '</div>';
+    });
+    if (state.hex) {
+      h += '<div class="lg"><b>Hexagons: ' + esc(HEXLABEL[state.hex]) + '</b>';
+      if (state.hex === 'hotspot' && HX) h += HX.hotspot_classes.map(function (c, i) { return sw(HX.hotspot_colors[i], c); }).join('') + sw('#9aa29e', 'Not analysed (no neighbours)');
+      else if (state.hex === 'localG') h += '<div class="ramp" style="background:linear-gradient(90deg,' + DIV.join(',') + ')"></div><div class="ticks"><span>≤ −3</span><span>0</span><span>≥ 3</span></div>';
+      else h += '<div class="ramp" style="background:linear-gradient(90deg,' + SEQ.join(',') + ')"></div><div class="ticks"><span>0</span><span>0.5</span><span>1</span></div>';
+      h += '</div>';
+    }
+    if (state.vectors.indexOf('roads') >= 0) h += '<div class="lg">' + sw('#1f3a5f', 'Roads crossing GI', 'line') + '</div>';
+    if (state.vectors.indexOf('regions') >= 0) h += '<div class="lg">' + sw('#1d2421', 'Region boundary', 'line') + '</div>';
+    if (state.vectors.indexOf('zone') >= 0) h += '<div class="lg">' + sw('#1f6a57', '3 km coastal zone', 'line') + '</div>';
+    document.getElementById('legendbody').innerHTML = h || '<p class="note" style="margin-top:0">No layer selected.</p>';
+  }
+
+  /* ---------------- state, controls, hash */
+  function writeHash() {
+    var parts = [];
+    var show = state.rasters.concat(state.vectors);
+    if (show.length) parts.push('show=' + show.join(','));
+    if (state.hex) parts.push('hex=' + state.hex);
+    if (state.base) parts.push('base=' + state.base);
+    var c = map.getCenter();
+    parts.push('view=' + c.lat.toFixed(4) + ',' + c.lng.toFixed(4) + ',' + map.getZoom());
+    history.replaceState(null, '', '#' + parts.join('&'));
+  }
+  function readHash() {
+    var h = {};
+    location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var p = kv.split('='); if (p[0]) h[p[0]] = decodeURIComponent(p[1] || ''); });
+    return h;
+  }
+  function setRaster(k, on) {
+    var i = state.rasters.indexOf(k);
+    if (on && i < 0) state.rasters.push(k);
+    if (!on && i >= 0) state.rasters.splice(i, 1);
+    refreshRasters(); legend(); writeHash();
+  }
+  var boxes = document.querySelectorAll('#panel input[type=checkbox]');
+  Array.prototype.forEach.call(boxes, function (b) {
+    b.addEventListener('change', function () {
+      if (b.dataset.r) setRaster(b.dataset.r, b.checked);
+      else { setVector(b.dataset.v, b.checked); legend(); writeHash(); }
+    });
+  });
+  document.getElementById('hexsel').addEventListener('change', function (e) { setHex(e.target.value); });
+  document.getElementById('opacity').addEventListener('input', function (e) { setOpacity(parseFloat(e.target.value)); });
+  Array.prototype.forEach.call(document.querySelectorAll('input[name=base]'), function (r) {
+    r.addEventListener('change', function () { if (r.checked) { setBase(r.value); writeHash(); } });
+  });
+  var panel = document.getElementById('panel');
+  document.getElementById('toggle').addEventListener('click', function () { panel.classList.toggle('open'); });
+  map.on('click', function () { if (window.innerWidth <= 760) panel.classList.remove('open'); });
+
+  getJSON('preview/map/rasters.json').then(function (m) {
+    RM = m;
+    var h = readHash();
+    var show = h.show !== undefined ? h.show.split(',').filter(Boolean) : ['mspa', 'regions'];
+    var base = bases[h.base] || h.base === 'none' ? h.base : 'grey';
+    if (h.view) { var v = h.view.split(',').map(Number); if (v.length === 3 && v.every(isFinite)) map.setView([v[0], v[1]], v[2]); }
+    setBase(base);
+    Array.prototype.forEach.call(document.querySelectorAll('input[name=base]'), function (r) { r.checked = r.value === base; });
+    Array.prototype.forEach.call(boxes, function (b) {
+      var k = b.dataset.r || b.dataset.v;
+      b.checked = show.indexOf(k) >= 0;
+      if (b.checked) { if (b.dataset.r) state.rasters.push(k); else setVector(k, true); }
+    });
+    if (h.hex) { document.getElementById('hexsel').value = h.hex; setHex(h.hex); }
+    refreshRasters(); legend(); writeHash();
+  }).catch(function () {
+    document.getElementById('legendbody').innerHTML = '<p class="note">The map data could not be loaded.</p>';
+  });
+})();
+</script>
+</body>
+</html>
