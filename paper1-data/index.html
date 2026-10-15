@@ -37,6 +37,12 @@ a{color:var(--accent);text-underline-offset:2px}
 header.top{border-bottom:1px solid var(--rule);background:var(--surface)}
 .crumbs{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-3);padding:14px 0}
 .crumbs a{color:var(--ink-3);text-decoration:none}.crumbs a:hover{color:var(--accent)}
+.dsw{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.dsw a{padding:3px 9px;border-radius:999px;border:1px solid var(--rule);text-decoration:none;color:var(--ink-2);font-size:12.5px}
+.dsw a.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.dsw a:hover{border-color:var(--accent);color:var(--ink)}
+.dsw .g{display:inline-flex;gap:3px;align-items:center;margin:0 4px 0 2px}
+.dsw .g b{font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-right:2px}
 .hero{padding:28px 0 36px}
 .eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px}
 h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.2vw,42px);line-height:1.15;margin:0 0 16px;max-width:26ch;text-wrap:balance}
@@ -111,7 +117,32 @@ footer{border-top:1px solid var(--rule);padding:24px 0 40px;font-size:13px;color
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="crumbs"><a href="../">← Home</a><span>Data release · version 1.0</span></div>
+    <div class="crumbs"><nav class="dsw" id="dsw" aria-label="Paper and data"><a href="../">← Home</a><span class="g"><b>Paper I</b><a href="https://doi.org/10.1016/j.ecolind.2024.112824" target="_blank" rel="noopener">Text</a><a class="on" href="./">Data</a></span></nav><span>Data release · version 1.0</span></div>
+    <script>
+    /* on the gated hub the switcher lists every paper; elsewhere hub-nav.json does not exist and the Paper I links stay */
+    (function(){
+      var nav = document.getElementById('dsw');
+      if(!nav || !window.fetch) return;
+      fetch('../hub-nav.json', {cache: 'no-cache'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(n){
+        if(!n || !n.groups) return;
+        var self = 'paper1-data/', frag = document.createDocumentFragment();
+        function link(href, label){
+          var a = document.createElement('a');
+          a.href = href === self ? './' : '../' + href; a.textContent = label;
+          if(href === self) a.className = 'on';
+          return a;
+        }
+        frag.appendChild(link(n.home.href, n.home.label));
+        n.groups.forEach(function(g){
+          var s = document.createElement('span'), b = document.createElement('b');
+          s.className = 'g'; b.textContent = g.label; s.appendChild(b);
+          s.appendChild(link(g.text, 'Text')); s.appendChild(link(g.data, 'Data')); frag.appendChild(s);
+        });
+        if(n.all) frag.appendChild(link(n.all.href, n.all.label));
+        nav.textContent = ''; nav.appendChild(frag);
+      }).catch(function(){});
+    })();
+    </script>
     <div class="hero">
       <p class="eyebrow">Paper I · Ecological Indicators 169 (2024) 112824</p>
       <h1>Green Infrastructure, MSPA elements and pressures in the 3 km coastal zone of Estonia</h1>
